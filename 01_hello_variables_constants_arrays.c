@@ -23,15 +23,16 @@ int main(void)
 	// USING VARIABLES EXAMPLE
 	// ===============================
 	char canton[15] = "Montes de Oca";
-	// An complete array variable cannot be reasignated with = (use strcpy from string.h library)
+	// An complete array variable cannot be reasignated with "=" operator
+	// Use strcpy (from the string.h library) to copy a new value
 	strcpy(canton, "Goicoechea");
 	int population = 132104;
 	float area = 31.5;
 	
-	// %s → indicates to replace with a string (text)
-	// %c → indicates to replace with a single character 
-	// %d → indicates to replace with an int number
-	// %f → indicates to replace with a floating point number or double
+	// %s → placeholder (marcador de posicion) for a string (text)
+	// %c → placeholder for a single character 
+	// %d → placeholder for an integer number
+	// %f → placeholder for a float or double
 	
 	// %x → indicates to replace with a hexadecimal number
 	// %p → indicates to replace with a pointer (memory address)
@@ -40,8 +41,8 @@ int main(void)
 	// ===============================
 	// USING LISTS (ARRAYS) EXAMPLE
 	// ===============================
-	// Using strings needs to be indicated using * for pointers
-	// Pointers to strings array → Each one pointing to the first character of each string (month name in this case)
+	// Strings in C are handled (manejados) using pointers (*)
+	// Array of string pointers → each points to the first character of a string (month names in this example)
 	char *months[] = {
 		"January", "February", "March", "April", "May", "June", 
 		"July", "August", "September", "October", "November", "December"

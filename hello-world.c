@@ -9,6 +9,7 @@
 
 int main(void)
 {
+	printf("Hello Hermes!\n");
 	
 	return 0;
 }

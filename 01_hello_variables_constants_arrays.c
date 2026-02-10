@@ -1,5 +1,5 @@
 /*
- * hello-world.c
+ * 01_hello_variables_constants_arrays.c
  * 
  * Copyright 2026 Hermes <hermes@PC-HERMES>
  */

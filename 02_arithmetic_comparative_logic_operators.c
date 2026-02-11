@@ -51,7 +51,17 @@ int main(void)
 	// ===============================
 	// CONDITIONALS EXAMPLE
 	// ===============================
+	// IF-ELSE (Unique condition)
 	//Guide challenge solution
+	int a = 17;
+	
+	if (a % 2 == 0) {
+		printf("The number is even (par)");
+	} else {
+		printf("The number is odd (impar)");
+	}
+	
+	// ELSE IF (Multiple conditions)
 	
 	
 	return 0;

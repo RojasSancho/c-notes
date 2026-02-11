@@ -10,7 +10,7 @@
 int main(void)
 {
 	// This is a comment
-	// Every C code must be inside this block to be ignored
+	// Every C comment must be inside this block to be ignored
 	// The program return a 0 that means "Success!"
 	
 	// ===============================

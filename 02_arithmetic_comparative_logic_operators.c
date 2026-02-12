@@ -1,7 +1,9 @@
 /*
- * 02_c
+ * Examples:
+ * Arithmetic, comparative and logic operators
+ * Unique and multiple conditionals
  * 
- * Copyright 2026 Hermes <hermes@PC-HERMES>
+ * Author: Hermes Rojas Sancho
  */
 
 #include <stdio.h>

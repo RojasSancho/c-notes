@@ -1,7 +1,9 @@
 /*
- * 01_hello_variables_constants_arrays.c
+ * Examples:
+ * Hello world, variables and constants
+ * Arrays
  * 
- * Copyright 2026 Hermes <hermes@PC-HERMES>
+ * Author: Hermes Rojas Sancho
  */
 
 #include <stdio.h>

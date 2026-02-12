@@ -7,6 +7,22 @@
 
 #include <stdio.h>
 
+// ===============================
+// FUNCTIONS
+// ===============================
+// Code block that can be reused in many parts of the entire code
+// Functions can return a value
+
+// Guide challenge solution
+// - Write a function that takes two numbers as arguments and returns the greater
+int greaterNumber (int firstNumber, int secondNumber) {
+	if (firstNumber >= secondNumber) {
+		return firstNumber;
+	}
+	return secondNumber;
+	
+}
+
 int main(void)
 {	
 	// ===============================
@@ -35,6 +51,15 @@ int main(void)
 		number++;
 	}
 	printf("\n");
+	
+	// ===============================
+	// USING FUNCTION
+	// ===============================
+	int number1 = 1750;
+	int number2 = 355;
+	
+	int greater = greaterNumber(number1, number2); // function call
+	printf("The greater number is: %d\n", greater);
 	
 	return 0;
 }

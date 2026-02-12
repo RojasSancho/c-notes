@@ -1,6 +1,6 @@
 /*
  * Examples:
- * Using loops, functions
+ * Loops and functions
  * 
  * Author: Hermes Rojas Sancho
  */

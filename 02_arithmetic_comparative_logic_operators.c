@@ -56,13 +56,22 @@ int main(void)
 	int a = 17;
 	
 	if (a % 2 == 0) {
-		printf("The number is even (par)");
+		printf("The number is even (par)\n");
 	} else {
-		printf("The number is odd (impar)");
+		printf("The number is odd (impar)\n");
 	}
 	
 	// ELSE IF (Multiple conditions)
+	//Guide challenge solution
+	int number = 9;
 	
+	if (number > 10){
+		printf("The number is greater than 10\n");
+	} else if (number < 10) {
+		printf("The number is smaller than 10\n");
+	} else {
+		printf("The number is the same as 10\n");
+	}
 	
 	return 0;
 }

@@ -1,5 +1,5 @@
 /*
- * Examples:
+ * Examples of C language:
  * Loops and functions
  * 
  * Author: Hermes Rojas Sancho

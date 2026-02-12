@@ -1,5 +1,5 @@
 /*
- * Examples:
+ * Examples of C language:
  * Arithmetic, comparative and logic operators
  * Unique and multiple conditionals
  * 

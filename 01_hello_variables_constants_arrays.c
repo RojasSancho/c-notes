@@ -1,5 +1,5 @@
 /*
- * Examples:
+ * Examples of C language:
  * Hello world, variables and constants
  * Arrays
  * 

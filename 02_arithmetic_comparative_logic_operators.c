@@ -11,8 +11,12 @@
 int main(void)
 {
 	// ===============================
-	// ARITHMETIC OPERATORS EXAMPLE
+	// OPERATORS
 	// ===============================
+	
+	// -------------------------------
+	// Arithmetic operators example
+	// -------------------------------
 	printf("%d\n", 10 + 5);	// addition = 15
 	printf("%d\n", 10 - 5);	// subtraction = 5
 	printf("%d\n", 6 * 3);	// multiplication = 18
@@ -25,9 +29,9 @@ int main(void)
 	
 	printf("The total area of the circle is: %.5f\n", area); // area = 78.53975 
 	
-	// ===============================
-	// COMPARATIVE OPERATORS EXAMPLE
-	// ===============================
+	// -------------------------------
+	// Comparative operators example
+	// -------------------------------
 	//Guide challenge solution
 	int number_a = 4;
 	int number_b = 2;
@@ -40,9 +44,9 @@ int main(void)
 		printf("The number_a (%d) is the same as the number_b (%d)\n", number_a, number_b);
 	}
 	
-	// ===============================
-	// LOGIC OPERATORS EXAMPLE
-	// ===============================
+	// -------------------------------
+	// Logic operators example
+	// -------------------------------
 	//Guide challenge solution
 	int x = 2;
 	int y = -3;
@@ -51,9 +55,12 @@ int main(void)
 	// ||: the operator OR returns a 1 (True) with only one true expression
 	
 	// ===============================
-	// CONDITIONALS EXAMPLE
+	// CONDITIONALS 
 	// ===============================
-	// IF-ELSE (Unique condition)
+	
+	// -------------------------------
+	// If-else (Unique condition)
+	// -------------------------------
 	//Guide challenge solution
 	int a = 17;
 	
@@ -63,7 +70,9 @@ int main(void)
 		printf("The number is odd (impar)\n");
 	}
 	
-	// ELSE IF (Multiple conditions)
+	// -------------------------------
+	// Else if (Multiple conditions)
+	// -------------------------------
 	//Guide challenge solution
 	int number = 9;
 	

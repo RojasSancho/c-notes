@@ -1,12 +1,14 @@
 /*
  * Examples of C language:
- * Structs (typedef) and modules
+ * Structs (typedef) 
+ * Module of file 05_
  * 
  * Author: Hermes Rojas Sancho
  */
 
 #include <stdio.h>
 #include <string.h> // strcpy()
+#include "05_module_example.c" // Importing the module 
 
 // ===============================
 // STRUCTS
@@ -55,6 +57,12 @@ int main(void)
 	
 	print_data(&miguelCar);
 	print_data(&dreamCar);
+	printf("\n");
 	
+	// ===============================
+	// IMPORTED MODULE (AREA OF A RECTANGLE)
+	// ===============================
+	int area = rectangleArea(10, 4);
+	printf("The area of the rectangle is: %d\n", area);
 	return 0;
 }

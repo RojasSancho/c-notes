@@ -2,7 +2,7 @@
 Notes, examples, and small exercises focused on the fundamentals of the C programming language.
 
 | Día | Fecha     | Bloques     | Duración video (min) | Estudio/ejercicios (aprox) | Total diario (min) | Comentario                                          |
-| --- |           | ----------- | -------------------- | -------------------------- | ------------------ | --------------------------------------------------- |
+| --- | ---       | ----------- | -------------------- | -------------------------- | ------------------ | --------------------------------------------------- |
 | 1   | Dom 22      | 3.2+3.3     | 17+16                | 17+16                      | 66                 | Bucles `for`, `while`, `do while`, base fundamental |
 | 2   | Lun 23      | 3.4+3.5     | 18+16                | 18+16                      | 68                 | Bucles anidados, factorial y depuración             |
 | 3   | Mar 24      | 3.6+3.7     | 22+16                | 22+16                      | 76                 | Fibonacci y números primos, más complejidad         |

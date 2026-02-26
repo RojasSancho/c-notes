@@ -19,3 +19,65 @@ Notes, examples, and small exercises focused on the fundamentals of the C progra
 | 14  | Sab 7      | **7.7**+8.1     | 28+16                | 28+16                      | 88                 | Estructuras dinámicas + lectura de ficheros         |  Checklist: 1. Modificas valores por puntero sin errores 2. Manejas malloc/realloc/free sin fugas conceptuales 3. Entiendes quién reserva y quién libera memoria  |
 | 15  | Dom 8      | 8.2+8.3+45  | 21+12+5              | 21+12+5                    | 76                 | Archivos y repaso final                             |  |
 
+## Validación de ejercicios dentro del plan de estudio
+
+Los ejercicios obligatorios están ubicados en puntos donde ocurre un cambio real en el modelo mental del lenguaje C. Esto asegura que la práctica consolide comprensión, no solo sintaxis.
+
+---
+
+### Día 5 — Swap por punteros  
+Temas del día: paso por referencia, direcciones de memoria  
+Motivo pedagógico: primer contacto real con punteros  
+
+✔ Ubicación correcta porque:
+- Introduce modificación indirecta de variables
+- Obliga a entender qué contiene un puntero
+- Marca transición de programación por valor → por referencia
+
+---
+
+### Día 9 — Struct dinámico  
+Temas del día: estructuras + vectores de estructuras  
+Motivo pedagógico: primer uso significativo de datos compuestos en memoria  
+
+✔ Ubicación correcta porque:
+- Combina estructuras con manejo de memoria
+- Introduce propiedad de memoria (quién reserva y quién libera)
+- Prepara para modelos de datos más complejos
+
+---
+
+### Día 11 — Vector dinámico que crece  
+Temas del día: memoria dinámica, `malloc`, `realloc`  
+Motivo pedagógico: comprensión real del redimensionamiento en heap  
+
+✔ Ubicación correcta porque:
+- Aplica `realloc` en un caso real
+- Obliga a manejar capacidad vs tamaño lógico
+- Introduce patrones comunes de estructuras dinámicas
+
+---
+
+### Día 13 — Arreglo dinámico de structs  
+Temas del día: funciones + memoria dinámica  
+Motivo pedagógico: integración completa de conceptos  
+
+✔ Ubicación correcta porque:
+- Integra punteros + estructuras + heap
+- Simula modelos de datos reales
+- Evalúa comprensión global del manejo de memoria
+
+---
+
+## Punto de verificación conceptual recomendado
+
+Antes de iniciar memoria dinámica (Día 11), se debe poder explicar con claridad:
+
+- Diferencia entre pasar valor y pasar dirección
+- Qué contiene exactamente una variable puntero
+- Diferencia entre memoria automática (stack) y dinámica (heap)
+- Por qué modificar a través de punteros cambia el valor original
+
+Si estos conceptos no están claros, se recomienda repasar punteros antes de continuar.
+
+

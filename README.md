@@ -1,4 +1,4 @@
-# 🧪 C-Notes: Fundamentos y Gestión de Memoria
+# C-Notes: Fundamentos y Gestión de Memoria
 
 Repositorio de preparación técnica en C. El objetivo es dominar la gestión de recursos antes de avanzar hacia la **Programación Paralela y Concurrente**.
 
@@ -24,7 +24,7 @@ Repositorio de preparación técnica en C. El objetivo es dominar la gestión de
 
 ---
 
-# 🚀 Retos de Dominio Técnico
+# Retos de Dominio Técnico
 
 ## 🔹 Día 5 — Intercambio por Referencia (Swap)
 **El Desafío:** Romper el alcance (*scope*) local de una función para modificar variables del `main`.

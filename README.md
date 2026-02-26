@@ -19,125 +19,93 @@ Notes, examples, and small exercises focused on the fundamentals of the C progra
 | 14  | Sab 7      | **7.7**+8.1     | 28+16                | 28+16                      | 88                 | Estructuras dinámicas + lectura de ficheros         |  Checklist: 1. Modificas valores por puntero sin errores 2. Manejas malloc/realloc/free sin fugas conceptuales 3. Entiendes quién reserva y quién libera memoria  |
 | 15  | Dom 8      | 8.2+8.3+45  | 21+12+5              | 21+12+5                    | 76                 | Archivos y repaso final                             |  |
 
-## 🧪 Ejercicios obligatorios
+# 🧪 Ejercicios Obligatorios: Programación en C
 
-### 🔹 Día 5 — Swap por punteros
+Este documento detalla los retos técnicos diseñados para dominar la gestión de memoria, punteros y estructuras de datos dinámicas.
 
-**Qué debe hacer el programa**
-- Declarar dos variables enteras en `main`.
-- Implementar una función:
-```c void swap(int *a, int *b);
-Intercambiar los valores usando direcciones de memoria.
+---
 
-Mostrar los valores antes y después del intercambio.
+## 🔹 Día 5 — Swap por Punteros
+**Objetivo:** Intercambiar el contenido de dos variables utilizando sus direcciones de memoria.
 
-Conceptos que cubre
+* **Qué debe hacer el programa:**
+    * Declarar dos variables enteras en `main`.
+    * Implementar una función: `void swap(int *a, int *b);`.
+    * Intercambiar los valores usando direcciones de memoria.
+    * Mostrar los valores antes y después del intercambio.
+* **Conceptos que cubre:**
+    * Paso por referencia en C.
+    * Direcciones de memoria (`&`).
+    * Variables puntero.
+    * Diferencia entre modificar valor vs modificar dirección.
 
-Paso por referencia en C.
+---
 
-Direcciones de memoria (&).
+## 🔹 Día 9 — Struct Dinámico
+**Objetivo:** Gestionar estructuras personalizadas en el Heap.
 
-Variables puntero.
+* **Qué debe hacer el programa:**
+    * Definir una estructura:
+        ```c
+        typedef struct {
+            char nombre[30];
+            int edad;
+        } Persona;
+        ```
+    * Reservar memoria para una `Persona` usando `malloc`.
+    * Llenar los datos desde `main`.
+    * Crear una función que modifique la estructura usando puntero.
+    * Liberar la memoria correctamente con `free`.
+* **Conceptos que cubre:**
+    * Estructuras (`struct`).
+    * Punteros a estructuras.
+    * Operador flecha (`->`).
+    * Reserva y liberación de memoria dinámica.
+    * Propiedad de memoria (quién reserva y quién libera).
 
-Diferencia entre modificar valor vs modificar dirección.
+---
 
-🔹 Día 9 — Struct dinámico
+## 🔹 Día 11 — Vector Dinámico que Crece
+**Objetivo:** Implementar un arreglo que redimensiona su capacidad físicamente según la demanda.
 
-Qué debe hacer el programa
+* **Qué debe hacer el programa:**
+    * Crear un vector dinámico de enteros.
+    * Capacidad inicial: **2 elementos**.
+    * Permitir insertar valores uno por uno.
+    * Cuando el vector se llena → duplicar capacidad con `realloc`.
+    * Mostrar contenido final del vector.
+    * Liberar memoria al finalizar.
+* **Conceptos que cubre:**
+    * Memoria dinámica en el heap.
+    * `malloc` y `realloc`.
+    * Redimensionamiento seguro de memoria.
+    * Diferencia entre tamaño lógico y capacidad física.
+    * Manejo seguro de punteros tras realocación.
 
-Definir una estructura:
+---
 
-typedef struct {
-    char nombre[30];
-    int edad;
-} Persona;
+## 🔹 Día 13 — Arreglo Dinámico de Structs
+**Objetivo:** Integración total de tipos de datos compuestos y escalabilidad dinámica.
 
-Reservar memoria para una Persona usando malloc.
+* **Qué debe hacer el programa:**
+    * Crear un arreglo dinámico de tipo `Persona`.
+    * Permitir agregar nuevas personas al arreglo.
+    * Redimensionar el arreglo automáticamente cuando se llena.
+    * Mostrar todos los registros almacenados.
+    * Liberar toda la memoria antes de terminar.
+* **Conceptos que cubre:**
+    * Integración de estructuras y memoria dinámica.
+    * Arreglos dinámicos de datos compuestos.
+    * Uso de `realloc` con estructuras.
+    * Acceso a estructuras mediante punteros.
+    * Gestión completa del ciclo de vida de memoria.
 
-Llenar los datos desde main.
+---
 
-Crear una función que modifique la estructura usando puntero.
-
-Liberar la memoria correctamente con free.
-
-Conceptos que cubre
-
-Estructuras (struct).
-
-Punteros a estructuras.
-
-Operador ->.
-
-Reserva y liberación de memoria dinámica.
-
-Propiedad de memoria (quién reserva y quién libera).
-
-🔹 Día 11 — Vector dinámico que crece
-
-Qué debe hacer el programa
-
-Crear un vector dinámico de enteros.
-
-Capacidad inicial: 2 elementos.
-
-Permitir insertar valores uno por uno.
-
-Cuando el vector se llena → duplicar capacidad con realloc.
-
-Mostrar contenido final del vector.
-
-Liberar memoria al finalizar.
-
-Conceptos que cubre
-
-Memoria dinámica en el heap.
-
-malloc y realloc.
-
-Redimensionamiento seguro de memoria.
-
-Diferencia entre tamaño lógico y capacidad física.
-
-Manejo seguro de punteros tras realocación.
-
-🔹 Día 13 — Arreglo dinámico de structs
-
-Qué debe hacer el programa
-
-Crear un arreglo dinámico de Persona.
-
-Permitir agregar nuevas personas al arreglo.
-
-Redimensionar el arreglo cuando se llena.
-
-Mostrar todos los registros almacenados.
-
-Liberar toda la memoria antes de terminar.
-
-Conceptos que cubre
-
-Integración de estructuras y memoria dinámica.
-
-Arreglos dinámicos de datos compuestos.
-
-Uso de realloc con estructuras.
-
-Acceso a estructuras mediante punteros.
-
-Gestión completa del ciclo de vida de memoria.
-
-✔ Criterio de dominio
-
+## ✔️ Criterio de Dominio
 Se considera dominio funcional si el programa:
-
-Modifica datos mediante punteros sin errores.
-
-Usa correctamente malloc, realloc y free.
-
-No pierde datos al redimensionar memoria.
-
-No deja memoria sin liberar.
-
-Puede implementarse desde cero sin consultar soluciones.
-
-
+1.  **Modifica datos** mediante punteros sin errores.
+2.  Usa correctamente **malloc**, **realloc** y **free**.
+3.  **No pierde datos** al redimensionar memoria.
+4.  **No deja memoria sin liberar** (sin fugas de memoria).
+5.  Puede implementarse desde cero sin consultar soluciones.

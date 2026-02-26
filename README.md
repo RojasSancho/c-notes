@@ -19,65 +19,125 @@ Notes, examples, and small exercises focused on the fundamentals of the C progra
 | 14  | Sab 7      | **7.7**+8.1     | 28+16                | 28+16                      | 88                 | Estructuras dinámicas + lectura de ficheros         |  Checklist: 1. Modificas valores por puntero sin errores 2. Manejas malloc/realloc/free sin fugas conceptuales 3. Entiendes quién reserva y quién libera memoria  |
 | 15  | Dom 8      | 8.2+8.3+45  | 21+12+5              | 21+12+5                    | 76                 | Archivos y repaso final                             |  |
 
-## Validación de ejercicios dentro del plan de estudio
+## 🧪 Ejercicios obligatorios
 
-Los ejercicios obligatorios están ubicados en puntos donde ocurre un cambio real en el modelo mental del lenguaje C. Esto asegura que la práctica consolide comprensión, no solo sintaxis.
+### 🔹 Día 5 — Swap por punteros
 
----
+**Qué debe hacer el programa**
+- Declarar dos variables enteras en `main`.
+- Implementar una función:
+```c void swap(int *a, int *b);
+Intercambiar los valores usando direcciones de memoria.
 
-### Día 5 — Swap por punteros  
-Temas del día: paso por referencia, direcciones de memoria  
-Motivo pedagógico: primer contacto real con punteros  
+Mostrar los valores antes y después del intercambio.
 
-✔ Ubicación correcta porque:
-- Introduce modificación indirecta de variables
-- Obliga a entender qué contiene un puntero
-- Marca transición de programación por valor → por referencia
+Conceptos que cubre
 
----
+Paso por referencia en C.
 
-### Día 9 — Struct dinámico  
-Temas del día: estructuras + vectores de estructuras  
-Motivo pedagógico: primer uso significativo de datos compuestos en memoria  
+Direcciones de memoria (&).
 
-✔ Ubicación correcta porque:
-- Combina estructuras con manejo de memoria
-- Introduce propiedad de memoria (quién reserva y quién libera)
-- Prepara para modelos de datos más complejos
+Variables puntero.
 
----
+Diferencia entre modificar valor vs modificar dirección.
 
-### Día 11 — Vector dinámico que crece  
-Temas del día: memoria dinámica, `malloc`, `realloc`  
-Motivo pedagógico: comprensión real del redimensionamiento en heap  
+🔹 Día 9 — Struct dinámico
 
-✔ Ubicación correcta porque:
-- Aplica `realloc` en un caso real
-- Obliga a manejar capacidad vs tamaño lógico
-- Introduce patrones comunes de estructuras dinámicas
+Qué debe hacer el programa
 
----
+Definir una estructura:
 
-### Día 13 — Arreglo dinámico de structs  
-Temas del día: funciones + memoria dinámica  
-Motivo pedagógico: integración completa de conceptos  
+typedef struct {
+    char nombre[30];
+    int edad;
+} Persona;
 
-✔ Ubicación correcta porque:
-- Integra punteros + estructuras + heap
-- Simula modelos de datos reales
-- Evalúa comprensión global del manejo de memoria
+Reservar memoria para una Persona usando malloc.
 
----
+Llenar los datos desde main.
 
-## Punto de verificación conceptual recomendado
+Crear una función que modifique la estructura usando puntero.
 
-Antes de iniciar memoria dinámica (Día 11), se debe poder explicar con claridad:
+Liberar la memoria correctamente con free.
 
-- Diferencia entre pasar valor y pasar dirección
-- Qué contiene exactamente una variable puntero
-- Diferencia entre memoria automática (stack) y dinámica (heap)
-- Por qué modificar a través de punteros cambia el valor original
+Conceptos que cubre
 
-Si estos conceptos no están claros, se recomienda repasar punteros antes de continuar.
+Estructuras (struct).
+
+Punteros a estructuras.
+
+Operador ->.
+
+Reserva y liberación de memoria dinámica.
+
+Propiedad de memoria (quién reserva y quién libera).
+
+🔹 Día 11 — Vector dinámico que crece
+
+Qué debe hacer el programa
+
+Crear un vector dinámico de enteros.
+
+Capacidad inicial: 2 elementos.
+
+Permitir insertar valores uno por uno.
+
+Cuando el vector se llena → duplicar capacidad con realloc.
+
+Mostrar contenido final del vector.
+
+Liberar memoria al finalizar.
+
+Conceptos que cubre
+
+Memoria dinámica en el heap.
+
+malloc y realloc.
+
+Redimensionamiento seguro de memoria.
+
+Diferencia entre tamaño lógico y capacidad física.
+
+Manejo seguro de punteros tras realocación.
+
+🔹 Día 13 — Arreglo dinámico de structs
+
+Qué debe hacer el programa
+
+Crear un arreglo dinámico de Persona.
+
+Permitir agregar nuevas personas al arreglo.
+
+Redimensionar el arreglo cuando se llena.
+
+Mostrar todos los registros almacenados.
+
+Liberar toda la memoria antes de terminar.
+
+Conceptos que cubre
+
+Integración de estructuras y memoria dinámica.
+
+Arreglos dinámicos de datos compuestos.
+
+Uso de realloc con estructuras.
+
+Acceso a estructuras mediante punteros.
+
+Gestión completa del ciclo de vida de memoria.
+
+✔ Criterio de dominio
+
+Se considera dominio funcional si el programa:
+
+Modifica datos mediante punteros sin errores.
+
+Usa correctamente malloc, realloc y free.
+
+No pierde datos al redimensionar memoria.
+
+No deja memoria sin liberar.
+
+Puede implementarse desde cero sin consultar soluciones.
 
 

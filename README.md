@@ -1,6 +1,6 @@
 # 🧪 C-Notes: Fundamentos y Gestión de Memoria
 
-Repositorio de notas, ejemplos y ejercicios enfocados en dominar el lenguaje C, con especial énfasis en la gestión manual de memoria y punteros.
+Repositorio de preparación técnica en C. El objetivo es dominar la gestión de recursos antes de avanzar hacia la **Programación Paralela y Concurrente**.
 
 ## 📅 Planificación de Estudio
 
@@ -26,60 +26,40 @@ Repositorio de notas, ejemplos y ejercicios enfocados en dominar el lenguaje C, 
 
 # 🚀 Retos de Dominio Técnico
 
-Estos ejercicios deben resolverse priorizando la comprensión del flujo de datos en memoria sobre la rapidez de ejecución.
-
 ## 🔹 Día 5 — Intercambio por Referencia (Swap)
 **El Desafío:** Romper el alcance (*scope*) local de una función para modificar variables del `main`.
-
-* **Requerimiento:** Implementar `void swap(int *a, int *b);`.
-* **Restricción:** No se permiten variables globales. El intercambio debe ocurrir directamente en las direcciones de memoria originales.
-* **Punto de control:** ¿Entiendes por qué pasar los valores por copia (valor) no funciona para persistir el cambio?
+* **Requerimiento:** Implementar `void swap(int *a, int *b);` sin variables globales.
+* **Punto de control:** El intercambio debe ocurrir directamente en las direcciones de memoria originales.
 
 
 
 ---
 
 ## 🔹 Día 9 — Persistencia en el Heap (Structs)
-**El Desafío:** Gestionar el ciclo de vida de un tipo de dato compuesto fuera de la pila (*stack*).
-
-* **Estructura base:**
-    ```c
-    typedef struct {
-        char nombre[30];
-        int edad;
-    } Persona;
-    ```
-* **Misión:** Reservar espacio para **una** `Persona` dinámicamente. Crear una función (ej. `set_datos`) que reciba el puntero y asigne los valores.
-* **Punto de control:** El programa debe imprimir los datos desde el `main` después de la modificación y liberar la memoria con `free` sin dejar huérfanos.
+**El Desafío:** Gestionar el ciclo de vida de un objeto compuesto fuera de la pila (*stack*).
+* **Misión:** Reservar espacio para una `Persona` con `malloc`, inicializarla en una función externa y asegurar que los datos persisten al regresar al `main`.
+* **Clave:** Dominar el operador flecha (`->`) para la manipulación de miembros.
 
 ---
 
 ## 🔹 Día 11 — Estrategia de Redimensionamiento (Vector)
 **El Desafío:** Implementar un arreglo dinámico que gestione su propia capacidad física.
-
-* **Lógica requerida:**
-    1.  Capacidad inicial: **2 elementos**.
-    2.  Si el vector se llena al insertar: **duplicar** la capacidad actual.
-    3.  Uso obligatorio de `realloc`.
-* **Punto de control:** Manejo de errores de `realloc`. Si falla, no debes perder el puntero original (usa un puntero auxiliar temporal).
+* **Lógica:** Iniciar con capacidad **2**. Al llenarse, duplicar con `realloc`.
+* **Seguridad:** Implementar un puntero temporal para capturar el retorno de `realloc` y evitar fugas si la memoria no puede asignarse.
 
 
 
 ---
 
 ## 🔹 Día 13 — Abstracción de Datos Dinámicos
-**El Desafío:** Escalar estructuras complejas. Integración de los conceptos de los días 9 y 11.
-
+**El Desafío:** Escalar estructuras complejas. Es el paso previo a la gestión de hilos.
 * **Misión:** Crear un arreglo dinámico de estructuras `Persona`.
-* **Complejidad:** Al redimensionar, el sistema debe mover bloques completos de `structs`. 
-* **Punto de control:** ¿Cómo calculas correctamente el tamaño en bytes en `realloc`? Asegúrate de que los datos de cada persona permanezcan íntegros tras el movimiento de memoria.
+* **Punto de control:** Garantizar que cada movimiento de memoria (`realloc`) mantenga la integridad de los datos de todas las estructuras almacenadas.
 
 ---
 
 ## ✔️ Criterios de Dominio Funcional
-Se considera el tema por dominado si el estudiante garantiza:
-
-1.  **Seguridad de Memoria:** Uso estricto de `malloc`/`realloc` y su correspondiente `free`. Cero *Memory Leaks*.
-2.  **Aritmética de Punteros:** Comprensión de cómo se desplaza el puntero al indexar arreglos dinámicos.
-3.  **Manejo de Errores:** Verificación sistemática de punteros `NULL` tras cada reserva.
-4.  **Independencia:** Capacidad de explicar la diferencia entre el Stack y el Heap sin ayuda externa.
+1.  **Seguridad de Memoria:** Cero *Memory Leaks* (comprobado idealmente con Valgrind).
+2.  **Aritmética de Punteros:** Comprensión clara de cómo se indexa la memoria dinámica.
+3.  **Manejo de Errores:** Verificación de punteros `NULL` tras cada reserva.
+4.  **Concepto de Propiedad:** Saber exactamente qué función es responsable de liberar (`free`) cada bloque.

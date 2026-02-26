@@ -19,93 +19,64 @@ Notes, examples, and small exercises focused on the fundamentals of the C progra
 | 14  | Sab 7      | **7.7**+8.1     | 28+16                | 28+16                      | 88                 | Estructuras dinámicas + lectura de ficheros         |  Checklist: 1. Modificas valores por puntero sin errores 2. Manejas malloc/realloc/free sin fugas conceptuales 3. Entiendes quién reserva y quién libera memoria  |
 | 15  | Dom 8      | 8.2+8.3+45  | 21+12+5              | 21+12+5                    | 76                 | Archivos y repaso final                             |  |
 
-# 🧪 Ejercicios Obligatorios: Programación en C
+# 🧪 Retos de Dominio: Punteros y Gestión de Memoria en C
 
-Este documento detalla los retos técnicos diseñados para dominar la gestión de memoria, punteros y estructuras de datos dinámicas.
-
----
-
-## 🔹 Día 5 — Swap por Punteros
-**Objetivo:** Intercambiar el contenido de dos variables utilizando sus direcciones de memoria.
-
-* **Qué debe hacer el programa:**
-    * Declarar dos variables enteras en `main`.
-    * Implementar una función: `void swap(int *a, int *b);`.
-    * Intercambiar los valores usando direcciones de memoria.
-    * Mostrar los valores antes y después del intercambio.
-* **Conceptos que cubre:**
-    * Paso por referencia en C.
-    * Direcciones de memoria (`&`).
-    * Variables puntero.
-    * Diferencia entre modificar valor vs modificar dirección.
+Esta serie de ejercicios está diseñada para pasar del manejo de valores básicos a la gestión compleja de memoria en el *Heap*. 
 
 ---
 
-## 🔹 Día 9 — Struct Dinámico
-**Objetivo:** Gestionar estructuras personalizadas en el Heap.
+## 🔹 Día 5 — Intercambio por Referencia (Swap)
+**El Desafío:** Romper el alcance (*scope*) local de una función para modificar variables del `main`.
 
-* **Qué debe hacer el programa:**
-    * Definir una estructura:
-        ```c
-        typedef struct {
-            char nombre[30];
-            int edad;
-        } Persona;
-        ```
-    * Reservar memoria para una `Persona` usando `malloc`.
-    * Llenar los datos desde `main`.
-    * Crear una función que modifique la estructura usando puntero.
-    * Liberar la memoria correctamente con `free`.
-* **Conceptos que cubre:**
-    * Estructuras (`struct`).
-    * Punteros a estructuras.
-    * Operador flecha (`->`).
-    * Reserva y liberación de memoria dinámica.
-    * Propiedad de memoria (quién reserva y quién libera).
+* **Requerimiento:** Implementar `void swap(int *a, int *b);`.
+* **Restricción:** No se permite el uso de variables globales. El intercambio debe ocurrir directamente en las direcciones de memoria de las variables originales.
+* **Punto de control:** ¿Entiendes por qué pasar los valores por copia no funcionaría aquí?
+
+
 
 ---
 
-## 🔹 Día 11 — Vector Dinámico que Crece
-**Objetivo:** Implementar un arreglo que redimensiona su capacidad físicamente según la demanda.
+## 🔹 Día 9 — Persistencia en el Heap (Structs)
+**El Desafío:** Gestionar el ciclo de vida de un tipo de dato compuesto fuera de la pila (*stack*).
 
-* **Qué debe hacer el programa:**
-    * Crear un vector dinámico de enteros.
-    * Capacidad inicial: **2 elementos**.
-    * Permitir insertar valores uno por uno.
-    * Cuando el vector se llena → duplicar capacidad con `realloc`.
-    * Mostrar contenido final del vector.
-    * Liberar memoria al finalizar.
-* **Conceptos que cubre:**
-    * Memoria dinámica en el heap.
-    * `malloc` y `realloc`.
-    * Redimensionamiento seguro de memoria.
-    * Diferencia entre tamaño lógico y capacidad física.
-    * Manejo seguro de punteros tras realocación.
+* **Estructura base:**
+    ```c
+    typedef struct {
+        char nombre[30];
+        int edad;
+    } Persona;
+    ```
+* **Misión:** Reservar espacio para **una** `Persona` dinámicamente. Debes crear una función que reciba el puntero y asigne valores (ej. `set_datos`).
+* **Punto de control:** El programa debe ser capaz de imprimir los datos desde el `main` después de llamar a la función modificadora, y finalmente liberar la memoria sin dejar fugas.
 
 ---
 
-## 🔹 Día 13 — Arreglo Dinámico de Structs
-**Objetivo:** Integración total de tipos de datos compuestos y escalabilidad dinámica.
+## 🔹 Día 11 — Estrategia de Redimensionamiento (Vector)
+**El Desafío:** Implementar un arreglo dinámico que gestione su propia capacidad.
 
-* **Qué debe hacer el programa:**
-    * Crear un arreglo dinámico de tipo `Persona`.
-    * Permitir agregar nuevas personas al arreglo.
-    * Redimensionar el arreglo automáticamente cuando se llena.
-    * Mostrar todos los registros almacenados.
-    * Liberar toda la memoria antes de terminar.
-* **Conceptos que cubre:**
-    * Integración de estructuras y memoria dinámica.
-    * Arreglos dinámicos de datos compuestos.
-    * Uso de `realloc` con estructuras.
-    * Acceso a estructuras mediante punteros.
-    * Gestión completa del ciclo de vida de memoria.
+* **Lógica requerida:**
+    1.  Iniciar con una capacidad física de **2**.
+    2.  Al intentar insertar un elemento cuando el vector está lleno, se debe **duplicar** la capacidad.
+    3.  Uso obligatorio de `realloc`.
+* **Punto de control:** Debes manejar el error de `realloc`. Si la redirección falla, el programa no debe perder el puntero original (puntero temporal de seguridad).
+
+
 
 ---
 
-## ✔️ Criterio de Dominio
-Se considera dominio funcional si el programa:
-1.  **Modifica datos** mediante punteros sin errores.
-2.  Usa correctamente **malloc**, **realloc** y **free**.
-3.  **No pierde datos** al redimensionar memoria.
-4.  **No deja memoria sin liberar** (sin fugas de memoria).
-5.  Puede implementarse desde cero sin consultar soluciones.
+## 🔹 Día 13 — Abstracción de Datos Dinámicos
+**El Desafío:** Escalar estructuras complejas. Es la culminación de los días anteriores.
+
+* **Misión:** Crear un arreglo dinámico de estructuras `Persona`. 
+* **Complejidad:** Cada vez que el arreglo crezca, se deben mover bloques de estructuras completas en memoria.
+* **Punto de control:** ¿Cómo calculas el nuevo tamaño en bytes para `realloc` cuando trabajas con un `struct`? Asegúrate de que cada `Persona` mantenga su integridad tras el movimiento de memoria.
+
+---
+
+## ✔️ Criterios de Evaluación (Criterio de Dominio)
+Para considerar el tema por dominado, el estudiante debe garantizar:
+
+1.  **Seguridad de Memoria:** Uso estricto de `malloc` / `realloc` y su correspondiente `free`. Cero *Memory Leaks*.
+2.  **Aritmética de Punteros:** Comprensión de cómo se desplaza el puntero en arreglos dinámicos.
+3.  **Manejo de Errores:** Verificación de punteros `NULL` tras cada reserva de memoria.
+4.  **Independencia:** Capacidad de explicar el flujo de datos entre el Stack y el Heap sin apoyo visual.

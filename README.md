@@ -11,16 +11,16 @@ Repositorio de preparación técnica en C. El objetivo es dominar la gestión de
 | 3 | 3.6+3.7 | 22+16 | 38 | 76 | Fibonacci y números primos | - |
 | 4 | 4.1+4.2 | 18+18 | 36 | 72 | Funciones y prototipos | - |
 | 5 | 4.3+4.4+5.1 | 8+12+8 | 28 | 66 | Void, punteros y arrays básicos | **Swap por punteros** |
-| 6 | 5.2+5.3 | 12+18 | 30 | 60 | Arrays con funciones y punteros | - |
-| 7 | 5.4+5.5 | 20+16 | 36 | 72 | Matrices y strings básicos | - |
-| 8 | 5.6+6.1 | 12+15 | 27 | 54 | Strings avanzados y structs | - |
-| 9 | 6.2+6.3 | 12+29 | 41 | 82 | Vectores de estructuras | **Struct dinámico** |
-| 10 | 6.4+6.5 | 36+14 | 50 | 100 | Estructuras anidadas y punteros | - |
-| 11 | 7.1+7.2 | 18+23 | 41 | 82 | Memoria dinámica: malloc/realloc | **Vector dinámico** |
-| 12 | 7.3+7.4 | 13+22 | 35 | 70 | Calloc, free y strings dinámicos | - |
-| 13 | 7.5+7.6 | 16+13 | 29 | 58 | Matrices y funciones dinámicas | **Arreglo de structs** |
-| 14 | 7.7+8.1 | 28+16 | 44 | 88 | Ficheros y estructuras dinámicas | **Checklist Dominio** |
-| 15 | 8.2+8.3 | 21+12 | 33 | 76 | Archivos y repaso final | - |
+| 6 Vie | 5.2+5.3 | 12+18 | 30 | 60 | Arrays con funciones y punteros | - |
+| 7 Sab | 5.4+5.5 | 20+16 | 36 | 72 | Matrices y strings básicos | - |
+| 8 Dom | 5.6+6.1 | 12+15 | 27 | 54 | Strings avanzados y structs | - |
+| 9 Lun | 6.2+6.3 | 12+29 | 41 | 82 | Vectores de estructuras | **Struct dinámico** |
+| 10 Mar | 6.4+6.5 | 36+14 | 50 | 100 | Estructuras anidadas y punteros | - |
+| 11 Mier | 7.1+7.2 | 18+23 | 41 | 82 | Memoria dinámica: malloc/realloc | **Vector dinámico** |
+| 12 Jue | 7.3+7.4 | 13+22 | 35 | 70 | Calloc, free y strings dinámicos | - |
+| 13 Vie | 7.5+7.6 | 16+13 | 29 | 58 | Matrices y funciones dinámicas | **Arreglo de structs** |
+| 14 Sab | 7.7+8.1 | 28+16 | 44 | 88 | Ficheros y estructuras dinámicas | **Checklist Dominio** |
+| 15 Dom | 8.2+8.3 | 21+12 | 33 | 76 | Archivos y repaso final | - |
 
 ---
 

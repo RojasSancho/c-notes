@@ -13,6 +13,8 @@ add_compile_options(
 )
 
 # ========== 01_FUNDAMENTALS ==========
+add_executable(fund_01_hello_variables_constants_arrays 01_Fundamentals/01_hello_variables_constants_arrays.c)
+add_executable(fund_01_1_scanf 01_Fundamentals/01.1_scanf.c)
 add_executable(fund_02_arithmetic_comparative_logic_operators 01_Fundamentals/02_arithmetic_comparative_logic_operators.c)
 add_executable(fund_03_loops_functions 01_Fundamentals/03_loops_functions.c)
 

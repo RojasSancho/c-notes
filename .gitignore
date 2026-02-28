@@ -1,4 +1,24 @@
-hello 
-*.out
+# Build artifacts
+cmake-build-debug/
+build/
 *.o
+*.a
+*.so
+*.dylib
+*.dll
+*.exe
+*.out
+a.out
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
 *.geany
+
+# OS
+.DS_Store
+Thumbs.db
+

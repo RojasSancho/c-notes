@@ -12,33 +12,33 @@ add_compile_options(
     -O0
 )
 
-# Main exercises
-add_executable(01_hello_variables_constants_arrays 01_hello_variables_constants_arrays.c)
-add_executable(01_1_scanf 01.1_scanf.c)
-add_executable(02_arithmetic_comparative_logic_operators 02_arithmetic_comparative_logic_operators.c)
-add_executable(03_loops_functions 03_loops_functions.c)
-add_executable(04_structs_typedef_modules 04_structs_typedef_modules.c)
-add_executable(05_module_example 05_module_example.c)
+# ========== 01_FUNDAMENTALS ==========
+add_executable(fund_02_arithmetic_comparative_logic_operators 01_Fundamentals/02_arithmetic_comparative_logic_operators.c)
+add_executable(fund_03_loops_functions 01_Fundamentals/03_loops_functions.c)
 
-# Conditional-Structures Exercises
-add_executable(conditional_01_conditional_structures_exercise Exercises/Conditional-Structures/01_conditional_structures_exercise.c)
-add_executable(conditional_02_multiple_conditions_exercise Exercises/Conditional-Structures/02_multiple_conditions_exercise.c)
+# ========== 02_STRUCTURES ==========
+add_executable(struct_04_structs_typedef_modules 02_Structures/04_structs_typedef_modules.c)
+add_executable(struct_05_module_example 02_Structures/05_module_example.c)
 
-# Functions-And-Pointers Exercises
-add_executable(functions_01_functions_fundamentals_factorial Exercises/Functions-And-Pointers/01_functions_fundamentals_factorial.c)
-add_executable(functions_02_functions_fundamentals_prime_numbers Exercises/Functions-And-Pointers/02_functions_fundamentals_prime_numbers.c)
-add_executable(functions_03_swap_for_pointers Exercises/Functions-And-Pointers/03_swap_for_pointers.c)
+# ========== EXERCISES/01_CONDITIONAL-STRUCTURES ==========
+add_executable(exercise_conditional_01 Exercises/01_Conditional-Structures/01_conditional_structures_exercise.c)
+add_executable(exercise_conditional_02 Exercises/01_Conditional-Structures/02_multiple_conditions_exercise.c)
 
-# Iterative-Structures Exercises
-add_executable(iterative_01_for_loop Exercises/Iterative-Structures/01_for_loop.c)
-add_executable(iterative_02_do_while_loop_and_char_manipulation Exercises/Iterative-Structures/02_do_while_loop_and_char_manipulation.c)
-add_executable(iterative_03_nested_loops Exercises/Iterative-Structures/03_nested_loops.c)
-add_executable(iterative_04_factorial_exercise Exercises/Iterative-Structures/04_factorial_exercise.c)
-add_executable(iterative_05_fibonacci_exercise Exercises/Iterative-Structures/05_fibonacci_exercise.c)
-add_executable(iterative_06_prime_number Exercises/Iterative-Structures/06_prime_number.c)
-add_executable(iterative_07_range_of_prime_numbers Exercises/Iterative-Structures/07_range_of_prime_numbers.c)
+# ========== EXERCISES/02_FUNCTIONS-AND-POINTERS ==========
+add_executable(exercise_functions_01_factorial Exercises/02_Functions-And-Pointers/01_functions_fundamentals_factorial.c)
+add_executable(exercise_functions_02_primes Exercises/02_Functions-And-Pointers/02_functions_fundamentals_prime_numbers.c)
+add_executable(exercise_functions_03_swap Exercises/02_Functions-And-Pointers/03_swap_for_pointers.c)
 
-# One-Dimensional-Arrays Exercises
-add_executable(arrays_01_one_dimensional_array_or_vector Exercises/One-Dimensional-Arrays/01_one_dimensional_array_or_vector.c)
-add_executable(arrays_02_arrays_with_functions Exercises/One-Dimensional-Arrays/02_arrays_with_functions.c)
-add_executable(arrays_03_arrays_with_functions_exercise Exercises/One-Dimensional-Arrays/03_arrays_with_functions_exercise.c)
+# ========== EXERCISES/03_ITERATIVE-STRUCTURES ==========
+add_executable(exercise_iterative_01_for Exercises/03_Iterative-Structures/01_for_loop.c)
+add_executable(exercise_iterative_02_do_while Exercises/03_Iterative-Structures/02_do_while_loop_and_char_manipulation.c)
+add_executable(exercise_iterative_03_nested Exercises/03_Iterative-Structures/03_nested_loops.c)
+add_executable(exercise_iterative_04_factorial Exercises/03_Iterative-Structures/04_factorial_exercise.c)
+add_executable(exercise_iterative_05_fibonacci Exercises/03_Iterative-Structures/05_fibonacci_exercise.c)
+add_executable(exercise_iterative_06_primes Exercises/03_Iterative-Structures/06_prime_number.c)
+add_executable(exercise_iterative_07_range_primes Exercises/03_Iterative-Structures/07_range_of_prime_numbers.c)
+
+# ========== EXERCISES/04_ONE-DIMENSIONAL-ARRAYS ==========
+add_executable(exercise_arrays_01_vector Exercises/04_One-Dimensional-Arrays/01_one_dimensional_array_or_vector.c)
+add_executable(exercise_arrays_02_with_functions Exercises/04_One-Dimensional-Arrays/02_arrays_with_functions.c)
+add_executable(exercise_arrays_03 Exercises/04_One-Dimensional-Arrays/03_arrays_with_functions_exercise.c)

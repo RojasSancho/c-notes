@@ -44,3 +44,35 @@ add_executable(exercise_iterative_07_range_primes Exercises/03_Iterative-Structu
 add_executable(exercise_arrays_01_vector Exercises/04_One-Dimensional-Arrays/01_one_dimensional_array_or_vector.c)
 add_executable(exercise_arrays_02_with_functions Exercises/04_One-Dimensional-Arrays/02_arrays_with_functions.c)
 add_executable(exercise_arrays_03 Exercises/04_One-Dimensional-Arrays/03_arrays_with_functions_exercise.c)
+
+# ========== PREPARACION-SEMESTRE/DIA1-2_MEMORIA-DINAMICA ==========
+add_executable(prep_dia1_ejercicio_array Preparacion-Semestre/Dia1-2_Memoria-Dinamica/02_ejercicio_array.c)
+add_executable(prep_dia1_solucion_array Preparacion-Semestre/Dia1-2_Memoria-Dinamica/03_solucion_array.c)
+add_executable(prep_dia1_ejercicio_struct Preparacion-Semestre/Dia1-2_Memoria-Dinamica/04_ejercicio_struct.c)
+add_executable(prep_dia1_solucion_struct Preparacion-Semestre/Dia1-2_Memoria-Dinamica/05_solucion_struct.c)
+
+# ========== PREPARACION-SEMESTRE/DIA3-4_PTHREADS-BASICO ==========
+add_executable(prep_dia3_ejercicio_hello Preparacion-Semestre/Dia3-4_Pthreads-Basico/02_ejercicio_hello_threads.c)
+target_link_libraries(prep_dia3_ejercicio_hello pthread)
+add_executable(prep_dia3_solucion_hello Preparacion-Semestre/Dia3-4_Pthreads-Basico/03_solucion_hello_threads.c)
+target_link_libraries(prep_dia3_solucion_hello pthread)
+add_executable(prep_dia3_ejercicio_multiples Preparacion-Semestre/Dia3-4_Pthreads-Basico/04_ejercicio_multiples.c)
+target_link_libraries(prep_dia3_ejercicio_multiples pthread)
+add_executable(prep_dia3_solucion_multiples Preparacion-Semestre/Dia3-4_Pthreads-Basico/05_solucion_multiples.c)
+target_link_libraries(prep_dia3_solucion_multiples pthread)
+
+# ========== PREPARACION-SEMESTRE/DIA5-6_MEMORIA-COMPARTIDA ==========
+add_executable(prep_dia5_ejercicio_race Preparacion-Semestre/Dia5-6_Memoria-Compartida/02_ejercicio_race_condition.c)
+target_link_libraries(prep_dia5_ejercicio_race pthread)
+add_executable(prep_dia5_solucion_race Preparacion-Semestre/Dia5-6_Memoria-Compartida/03_solucion_race_condition.c)
+target_link_libraries(prep_dia5_solucion_race pthread)
+
+# ========== PREPARACION-SEMESTRE/DIA7-8_LISTAS-ENLAZADAS ==========
+add_executable(prep_dia7_ejercicio_lista Preparacion-Semestre/Dia7-8_Listas-Enlazadas/02_ejercicio_lista.c)
+add_executable(prep_dia7_solucion_lista Preparacion-Semestre/Dia7-8_Listas-Enlazadas/03_solucion_lista.c)
+
+# ========== PREPARACION-SEMESTRE/DIA9_REPASO ==========
+add_executable(prep_dia9_integrador Preparacion-Semestre/Dia9_Repaso/02_ejercicio_integrador.c)
+target_link_libraries(prep_dia9_integrador pthread)
+
+add_executable(03_solucion_array Preparacion-Semestre/Dia1-2_Memoria-Dinamica/03_solucion_array.c)

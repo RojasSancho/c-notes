@@ -18,12 +18,13 @@ exercise_*
 prep_*
 test_*
 
-# Executables in specific directories (files without extension)
-Preparacion-Semestre/**/0[2-9]_ejercicio_*
-Preparacion-Semestre/**/0[2-9]_solucion_*
-!Preparacion-Semestre/**/*.c
-!Preparacion-Semestre/**/*.h
-!Preparacion-Semestre/**/*.md
+# Common executable names (anywhere in the repo)
+array
+hello
+threads
+race
+lista
+integrador
 
 # IDE
 .idea/

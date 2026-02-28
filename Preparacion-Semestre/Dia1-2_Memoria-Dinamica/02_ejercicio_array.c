@@ -21,53 +21,67 @@
  * TIEMPO ESTIMADO: 30-45 minutos
  */
 
-int main() {
+int main(void) {
     printf("=== Ejercicio: Array Dinámico ===\n\n");
 
     // TODO: Declara una variable 'n' para almacenar cuántos números quiere el usuario
-
+    int n;
 
     // TODO: Pregunta al usuario "¿Cuántos números deseas ingresar? "
-
+    printf("Cuantos numeros deseas ingresar? ");
 
     // TODO: Lee la respuesta del usuario
-
+    scanf("%d", &n);
 
     // TODO: Declara un puntero a int llamado 'numeros'
-
+    int *numeros;
 
     // TODO: Reserva memoria para 'n' enteros usando malloc
     // Recuerda: malloc necesita el número de BYTES, no el número de elementos
-
+    numeros = (int *)malloc(n * sizeof(int));
 
     // TODO: Valida que malloc no falló (verificar si es NULL)
-
-
+    if (numeros == NULL) {
+        printf("Error: No hay suficiente memoria disponible.\n");
+        return 1; // Salir del programa
+    }
 
     printf("Memoria reservada exitosamente para %d números\n\n", n);
 
     // TODO: Pide al usuario que ingrese los números
     printf("Ingresa %d números:\n", n);
 
+    for (int i = 0; i < n; i++) {
+        printf("Numero %d: ", i + 1);
+        scanf("%d", &numeros[i]);
+    }
 
     printf("\n");
 
     // TODO: Muestra los números ingresados
     printf("Números ingresados:\n");
+    for (int i = 0; i < n; i++) {
+        printf("numero[%d] = %d \n", i, numeros[i]);
+    }
 
+    printf("\n");
 
     // TODO: Calcula el promedio
+    float promedio = 0;
+    for (int i = 0; i < n; i++) {
+        promedio += numeros[i];
+    }
 
-
+    promedio = promedio / n;
 
     // TODO: Muestra el promedio
-
+    printf("Promedio: %.2f", promedio);
 
     // TODO: Libera la memoria
-
+    free(numeros);
 
     // TODO: Pon el puntero en NULL (buena práctica)
-
+    numeros = NULL;
 
     printf("\nMemoria liberada correctamente\n");
 
@@ -98,5 +112,3 @@ int main() {
  * - Recuerda: SIEMPRE validar NULL
  * - Recuerda: Por cada malloc, un free
  */
-
-

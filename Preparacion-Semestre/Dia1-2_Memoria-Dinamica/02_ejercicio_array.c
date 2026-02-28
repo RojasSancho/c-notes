@@ -33,6 +33,12 @@ int main(void) {
     // TODO: Lee la respuesta del usuario
     scanf("%d", &n);
 
+    // Validar entrada (opcional pero recomendado)
+    if (n <= 0) {
+        printf("Error: Debes ingresar un número positivo\n");
+        return 1;
+    }
+
     // TODO: Declara un puntero a int llamado 'numeros'
     int *numeros;
 

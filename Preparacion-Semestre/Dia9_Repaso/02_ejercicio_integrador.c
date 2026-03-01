@@ -15,8 +15,11 @@
  * TIEMPO ESTIMADO: 120-180 minutos
  */
 
-// TODO: Define la estructura Nodo
-
+// Declaración mínima de Nodo para que el esqueleto compile
+typedef struct Nodo {
+    int dato;
+    struct Nodo *siguiente;
+} Nodo;
 
 // TODO: Define funciones:
 // - crear_nodo(int)
@@ -68,17 +71,11 @@ int main() {
  * 3. Verifica con valgrind:
  *    valgrind --leak-check=full ./integrador
  *
- * 4. NOTA: Probablemente verás race conditions
- *    (múltiples threads accediendo la misma lista sin sincronización)
- *    ¡Esto es NORMAL! La solución es mutex (próximo curso)
+ * 4. NOTA: Es posible que observes comportamientos inconsistentes
+ *    cuando múltiples threads acceden la misma estructura sin protección.
+ *    Esto es parte del experimento: en cursos posteriores verás primitivas de
+ *    sincronización que permiten resolver estos problemas.
  *
- * CONCEPTOS INTEGRADOS:
- *
- * - malloc: reservar threads
- * - libre: liberar lista
- * - pthread_create: crear threads
- * - pthread_join: esperar threads
- * - Nodo estructura: lista enlazada
- * - memoria compartida: lista accedida por múltiples threads
+ * CONCEPTOS INTEGRADOS (alto nivel):
+ * - memoria dinámica, threads, estructuras enlazadas y acceso compartido
  */
-

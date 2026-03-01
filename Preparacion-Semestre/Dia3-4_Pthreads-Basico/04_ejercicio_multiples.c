@@ -3,44 +3,42 @@
 #include <stdlib.h>
 
 /*
- * EJERCICIO AVANZADO: N Threads Dinámicos
+ * EJERCICIO AVANZADO: N Threads Dinámicos (versión limpia)
  *
  * OBJETIVO:
  * El usuario decide cuántos threads crear
  *
  * INSTRUCCIONES:
  * - Completa el código donde dice // TODO:
- * - Usa malloc para crear array dinámico de pthread_t
- * - Crea N threads
- * - Espera a todos
+ * - Usa memoria dinámica donde haga falta
+ * - Crea N threads y espera a que terminen
  *
  * TIEMPO ESTIMADO: 60-90 minutos
  */
 
-void *worker(void *argumento) {
-    int id = (int)argumento;
-    printf("Worker %d ejecutando\n", id);
-    return NULL;
-}
+// Firma de la función worker (deja al alumno definir el comportamiento)
+void *worker(void *argumento);
 
-int main() {
+int main(void) {
     printf("=== Ejercicio: N Threads Dinámicos ===\n\n");
 
-    int n;
+    int n = 0;
     printf("¿Cuántos threads deseas crear? ");
-    scanf("%d", &n);
+    // Leer cantidad deseada por el usuario
+    if (scanf("%d", &n) != 1) {
+        printf("Entrada inválida\n");
+        return 1;
+    }
 
     if (n <= 0) {
         printf("Error: Debes crear al menos 1 thread\n");
         return 1;
     }
 
-    // TODO: Reserva memoria para un array de pthread_t
-    // pthread_t *threads = (pthread_t *)malloc(...);
+    // TODO: Reserva memoria para un array de pthread_t (si n es variable)
+    // pthread_t *threads = NULL; // malloc aquí si lo decides
 
-
-    // TODO: Valida que malloc no falló
-
+    // TODO: Valida que malloc no falló (si usas malloc)
 
     printf("\nCreando %d threads...\n", n);
 
@@ -49,7 +47,6 @@ int main() {
     //     // Crea el thread i
     // }
 
-
     printf("Esperando que terminen...\n\n");
 
     // TODO: Loop para esperar a todos los threads
@@ -57,9 +54,7 @@ int main() {
     //     // Espera el thread i
     // }
 
-
-    // TODO: Libera la memoria
-
+    // TODO: Libera la memoria si corresponde
 
     printf("Todos los threads completaron\n");
 
@@ -68,22 +63,7 @@ int main() {
 
 /*
  * CUANDO TERMINES:
- *
- * 1. Compila:
- *    gcc -pthread -Wall -Wextra -g -o multiples 04_ejercicio_multiples.c
- *
- * 2. Ejecuta con diferentes valores:
- *    ./multiples
- *    ¿Cuántos threads? 5
- *
- * 3. Verifica con valgrind:
- *    valgrind --leak-check=full ./multiples
- *
- * 4. Compara con 05_solucion_multiples.c
- *
- * PISTA:
- * - Usa malloc(n * sizeof(pthread_t))
- * - threads[i] para acceder al i-ésimo thread
- * - No olvides free(threads) al final
+ * - Compila con -pthread
+ * - Ejecuta con diferentes valores de N
+ * - Si necesitas pista conceptual, abre HINT1.md; para una pista más concreta abre HINT2.md
  */
-

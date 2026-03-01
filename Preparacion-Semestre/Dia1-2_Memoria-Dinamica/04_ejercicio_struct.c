@@ -26,22 +26,42 @@ int main() {
     scanf("%d", &cantidad);
 
     // TODO: Declara un puntero a Estudiante
-
+    Estudiante *estudiantes;
 
     // TODO: Reserva memoria para 'cantidad' estudiantes
-
+    estudiantes = malloc(cantidad * sizeof(Estudiante));
 
     // TODO: Valida que malloc no falló
+    if (estudiantes == NULL) {
+        printf("Error: No fue posible reservar memoria.\n");
+        return 1;
+    }
 
-
-    printf("\nIngresa los datos de %d estudiantes:\n", cantidad);
+    printf("\nIngresa los datos de %d estudiante(s):\n", cantidad);
 
     // TODO: Pide los datos de cada estudiante
+    for (int i = 0; i < cantidad; i++) {
+        printf("\nIngrese el nombre del estudiante numero %d: ", i + 1);
+        scanf("%s", estudiantes[i].nombre);
 
+        printf("Ingrese la edad estudiante numero %d: ", i + 1);
+        scanf("%d", &estudiantes[i].edad);
+
+        printf("Ingrese el promedio (0 - 100) del estudiante numero %d: ", i + 1);
+        scanf("%f", &estudiantes[i].promedio);
+    }
 
 
     // TODO: Muestra los datos de todos los estudiantes
-
+    for (int i = 0; i < cantidad; i++) {
+        printf("\n---------------------------------");
+        printf("\nDatos del estudiante numero %d: \n", i + 1);
+        printf("---------------------------------");
+        printf("\nNombre:  %s ", estudiantes[i].nombre);
+        printf("\nEdad:  %d ", estudiantes[i].edad);
+        printf("\nPromedio:  %.2f ", estudiantes[i].promedio);
+        printf("\n");
+    }
 
 
     // TODO: Calcula el promedio general
@@ -49,7 +69,8 @@ int main() {
 
 
     // TODO: Libera la memoria
-
+    free(estudiantes);
+    estudiantes = NULL;
 
     printf("\nMemoria liberada correctamente\n");
 

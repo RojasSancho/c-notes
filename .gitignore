@@ -20,6 +20,7 @@ test_*
 
 # Common executable names (anywhere in the repo)
 array
+struct
 hello
 threads
 race

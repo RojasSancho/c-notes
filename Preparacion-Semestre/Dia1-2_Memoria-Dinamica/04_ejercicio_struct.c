@@ -51,7 +51,6 @@ int main() {
         scanf("%f", &estudiantes[i].promedio);
     }
 
-
     // TODO: Muestra los datos de todos los estudiantes
     for (int i = 0; i < cantidad; i++) {
         printf("\n---------------------------------");
@@ -63,10 +62,14 @@ int main() {
         printf("\n");
     }
 
-
     // TODO: Calcula el promedio general
+    float promedio_general = 0;
+    for (int i = 0; i < cantidad; i++) {
+        promedio_general += estudiantes[i].promedio;
+    }
 
-
+    promedio_general = promedio_general / cantidad;
+    printf("\nPromedio general: %.2f\n", promedio_general);
 
     // TODO: Libera la memoria
     free(estudiantes);
@@ -91,5 +94,3 @@ int main() {
  *
  * 4. Compara con 05_solucion_struct.c
  */
-
-

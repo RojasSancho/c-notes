@@ -54,7 +54,7 @@ int main(void) {
     /*
      * Reservamos memoria dinámica porque n es determinado en tiempo de ejecución.
      * No podemos usar un arreglo estático tipo:
-     * pthread_t threads[n];  (eso sería VLA y no siempre deseable).
+     * pthread_t threads[n]; (eso sería VLA y no siempre deseable).
      *
      * sizeof(pthread_t) garantiza portabilidad.
      */

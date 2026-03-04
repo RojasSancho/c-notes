@@ -19,11 +19,13 @@
 int contador = 0;  // Variable COMPARTIDA entre threads
 
 // TODO: Define la función que incrementará el contador
-// void *incrementar(void *arg) {
-//     // Loop para incrementar 100000 veces
-//     // contador++;
-//     return NULL;
-// }
+void *incrementar(void *arg) {
+    // Loop para incrementar 100000 veces
+    for (int i = 0; i < 100000; i++) {
+        contador++;
+    }
+    return NULL;
+}
 
 
 int main() {
@@ -33,22 +35,22 @@ int main() {
     printf("(100000 del thread 1 + 100000 del thread 2)\n\n");
 
     // TODO: Declara 2 threads
-    // pthread_t thread1, thread2;
+    pthread_t thread1, thread2;
 
 
     contador = 0;
 
     // TODO: Crea thread1 que incremente el contador 100000 veces
-    // pthread_create(...);
+    pthread_create(&thread1, NULL, incrementar, NULL);
 
 
     // TODO: Crea thread2 que incremente el contador 100000 veces
-    // pthread_create(...);
+    pthread_create(&thread2, NULL, incrementar, NULL);
 
 
     // TODO: Espera ambos threads
-    // pthread_join(...);
-    // pthread_join(...);
+    pthread_join(thread1, NULL);
+    pthread_join(thread2, NULL);
 
 
     printf("Resultado actual: contador = %d\n", contador);

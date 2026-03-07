@@ -211,17 +211,17 @@ En el curso **Programación Paralela**:
 
 ## Resumen
 
-| Operación | Operación |
-|-----------|-----------|
-| `crear_nodo()` | Crear un nodo dinámico |
-| `insertar()` | Agregar nodo |
-| `eliminar()` | Remover nodo |
-| `imprimir()` | Recorrer y mostrar |
-| `liberar()` | Liberar todos los nodos |
+| Operación      | Operación               |
+|----------------|-------------------------|
+| `crear_nodo()` | Crear un nodo dinámico  |
+| `insertar()`   | Agregar nodo            |
+| `eliminar()`   | Remover nodo            |
+| `imprimir()`   | Recorrer y mostrar      |
+| `liberar()`    | Liberar todos los nodos |
 
 ---
 
 ## Próximo Paso
 
-Abre `02_ejercicio_lista.c` y **implementa la lista tú mismo**.
+Abre `02_ejercicio_lista.c` e **implementa la lista tú mismo**.
 

@@ -1,6 +1,8 @@
 #include <pthread.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdint.h>
+
 
 /*
  * SOLUCIÓN: N Threads Dinámicos
@@ -36,7 +38,7 @@ int main() {
 
     // Crear todos los threads
     for (int i = 0; i < n; i++) {
-        if (pthread_create(&threads[i], NULL, worker, (void *)i) != 0) {
+        if (pthread_create(&threads[i], NULL, worker, (void *) (intptr_t) i) != 0) {
             printf("Error al crear thread %d\n", i);
             free(threads);
             return 1;

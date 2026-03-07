@@ -7,6 +7,9 @@
  */
 
 // Función que ejecutará cada thread
+// pthread exige funciones tipo void* (void*):
+// el argumento y retorno son void* para permitir pasar y devolver cualquier tipo de dato.
+// Dentro de la función se convierte (cast) al tipo real necesario.
 void *funcion_thread(void *argumento) {
     int numero = (int)argumento;
     printf("Hola desde thread %d\n", numero);

@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <pthread.h>
+#include <stdint.h>
 
 /*
  * EJERCICIO INTEGRADOR: Combina TODOS los conceptos
@@ -22,37 +23,80 @@ typedef struct Nodo {
 } Nodo;
 
 // TODO: Define funciones:
-// - crear_nodo(int)
-// - insertar_inicio(Nodo**, int)
-// - imprimir(Nodo*)
-// - liberar(Nodo**)
-// - funcion_thread(void*) - que inserte en la lista
+Nodo *crear_nodo(const int dato) {
+    Nodo *nuevo = malloc(sizeof(Nodo));
+    if (nuevo == NULL) return NULL;
 
+    nuevo->dato = dato;
+    nuevo->siguiente = NULL;
+    return nuevo;
+}
+void insertar_inicio(Nodo** cabeza, int dato) {
+    Nodo *nuevo = crear_nodo(dato);
 
-int main() {
+    nuevo->siguiente = *cabeza;
+
+    *cabeza = nuevo;
+
+}
+void imprimir(const Nodo* cabeza) {
+    while (cabeza != NULL) {
+        printf("%d ", cabeza->dato);
+        cabeza = cabeza->siguiente;
+    }
+    printf("\n");
+}
+void liberar(Nodo* cabeza) {
+    while (cabeza != NULL) {
+        Nodo *temp = cabeza;
+
+        cabeza = cabeza->siguiente;
+        free(temp);
+    }
+}
+void* insertar_thread(void* arg) {
+    Nodo **cabeza = (Nodo**) arg;
+    for (int i = 0; i < 5; i++ ) {
+        printf("Thread %lu insertando %d\n",
+               (unsigned long)pthread_self(), i);
+        insertar_inicio(cabeza, i);
+    }
+    return NULL;
+}
+
+int main(void) {
     printf("=== Ejercicio Integrador ===\n\n");
 
     Nodo *lista = NULL;
-    int n = 3;  // 3 threads
+    const int n = 3;  // 3 threads
 
     // TODO: Reservar memoria para N threads
-
+    pthread_t *threads = malloc((size_t)n * sizeof(pthread_t));
+    if (threads == NULL) {
+        printf("Error: No se pudo reservar memoria\n");
+        return 1;
+    }
 
     printf("Creando %d threads que insertarán en la lista...\n", n);
 
     // TODO: Crear N threads
     // Cada thread inserta 5 números en la lista
-
+    for (int i = 0; i < n; i++) {
+        pthread_create(&threads[i], NULL, insertar_thread, &lista);
+    }
 
     // TODO: Esperar todos los threads
-
+    for (int i = 0; i < n; i++) {
+        pthread_join(threads[i], NULL);
+    }
 
     printf("\nLista final:\n");
     // TODO: Imprimir la lista
-
+    imprimir(lista);
 
     // TODO: Liberar la lista
-
+    free(threads);
+    liberar(lista);
 
     printf("Programa terminado\n");
 

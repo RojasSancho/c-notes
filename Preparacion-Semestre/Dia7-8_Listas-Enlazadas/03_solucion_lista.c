@@ -28,7 +28,7 @@ void insertar_inicio(Nodo **cabeza, int dato) {
     *cabeza = nuevo;
 }
 
-void imprimir(Nodo *cabeza) {
+void imprimir(const Nodo *cabeza) {
     while (cabeza != NULL) {
         printf("%d ", cabeza->dato);
         cabeza = cabeza->siguiente;
